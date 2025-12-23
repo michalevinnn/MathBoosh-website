@@ -1,0 +1,416 @@
+/* --- הגדרות בסיס (Reset & Global) --- */
+:root {
+    --primary-color: #061f4e; /* כחול עמוק מהמוקאפ */
+    --accent-color: #1ae7c2;  /* כתום מהמוקאפ */
+    --text-color: #333333;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(0,0,0,0.05); /* צללית עדינה */
+    --font-main: 'Rubik', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    direction: rtl;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- כפתורים --- */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 8px; /* פינות עגולות */
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-orange {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.btn-orange:hover {
+    background-color: #1ab699; /* כתום כהה יותר */
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.btn-outline:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+
+/* --- Header --- */
+.site-header {
+    background-color: var(--primary-color);
+    padding: 20px 0;
+    position: sticky; /* נדבק למעלה בגלילה */
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    color: #e0e0e0;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--accent-color);
+}
+
+/* --- Hero Section (החלק המורכב עם האלכסון) --- */
+.hero-section {
+    position: relative;
+    /* שימי לב: הסרנו את הצבע הכחול מהרקע הכללי כדי לשלוט בו דרך הצדדים */
+    background-color: var(--light-bg); 
+    min-height: 600px;
+    display: flex;
+}
+
+.hero-split-container {
+    display: flex;
+    width: 100%;
+}
+
+/* צד הטקסט (הכחול) */
+.hero-content-side {
+    flex: 1.1; /* לוקח 50% מהרוחב, או ניתן לשנות ל- width: 40% */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* ממרכז את הטקסט */
+    background-color: var(--primary-color); /* הצבע הכחול כאן */
+    padding: 60px;
+    color: var(--white);
+    position: relative;
+    z-index: 2; /* מוודא שהטקסט מעל */
+}
+
+.hero-text-wrapper {
+    max-width: 550px;
+}
+
+.hero-text-wrapper h1 {
+    font-size: 60px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text-wrapper p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+}
+
+/* צד התמונה */
+.hero-image-side {
+    flex: 1.6; /* נותן לתמונה קצת יותר מקום (כ-60%) */
+    position: relative;
+    overflow: hidden; /* חובה! מונע מהתמונה לגלוש החוצה */
+    margin-right: -2px; /* תיקון קטן לפס לבן אם נוצר בחיבור */
+}
+
+/* עיצוב התמונה עצמה כדי שלא תתעוות */
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* חותך את השוליים של התמונה במקום למעוך אותה */
+    object-position: center; /* מוודא שהמרכז של התמונה יופיע */
+    display: block;
+}
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* --- Titles --- */
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #444;
+    margin: 60px 0 40px;
+    font-weight: 700;
+}
+
+/* --- Subjects Grid (נושאים) --- */
+.subjects-section {
+    padding-bottom: 60px;
+    background-color: var(--light-bg);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 עמודות שוות */
+    gap: 25px;
+}
+
+.subject-card {
+    background: var(--white);
+    padding: 30px 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.subject-card:hover {
+    transform: translateY(-5px); /* אפקט ציפה למעלה */
+}
+
+.card-icon-3d {
+    font-size: 50px;
+    margin-bottom: 15px;
+    /* כאן תוכלי להכניס תמונות 3D אמיתיות בהמשך */
+}
+
+.subject-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+/* --- Testimonials (המלצות) --- */
+.testimonials-section {
+    padding: 20px 0 80px;
+    background-color: var(--light-bg);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 עמודות */
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid #eee;
+}
+
+.stars {
+    color: #FFD700; /* צבע זהב לכוכבים */
+    margin-bottom: 15px;
+}
+
+.quote {
+    font-style: italic;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #555;
+    min-height: 50px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-details .name {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.user-details .role {
+    font-size: 14px;
+    color: #777;
+}
+
+/* --- Footer --- */
+.site-footer {
+    background-color: var(--primary-color);
+    color: #ccc;
+    padding: 50px 0 20px;
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h4 {
+    color: var(--white);
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col a:hover {
+    color: var(--accent-color);
+}
+
+/* --- תיקון ל-Header שייצמד לקצוות המסך --- */
+
+/* דורסים את הגבלת הרוחב של ה-Container הרגיל רק בתוך ההדר */
+.site-header .header-container {
+    max-width: 100%; /* מאפשר התפרשות על כל רוחב המסך */
+    padding: 0 40px; /* מרווח פנימי כדי שלא יידבק ממש לקצה הפיזי של המסך */
+}
+
+/* אם הכפתור והלוגו החליפו מקומות בטעות, הקוד הזה מוודא את הסדר הנכון ב-RTL */
+/* ב-RTL: Flex Start = ימין, Flex End = שמאל */
+.header-container {
+    justify-content: space-between; /* דוחף את האלמנטים לקצוות */
+}
+
+/* --- שדרוג כרטיסיות הנושאים (Subjects) --- */
+.subjects-section {
+    padding: 80px 0;
+    background-color: #f0f4f8; /* רקע אפרפר-כחלחל עדין */
+}
+
+.subject-card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* צללית רכה ומודרנית */
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+.subject-card:hover {
+    transform: translateY(-10px); /* עולה למעלה בעכבר */
+    box-shadow: 0 20px 40px rgba(26, 43, 75, 0.15); /* צללית כחולה עדינה */
+}
+
+/* עיגול דקורטיבי מאחורי האייקון */
+.card-icon-3d {
+    font-size: 45px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f0f4f8 100%);
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--primary-color);
+}
+
+.subject-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+/* --- שיפורים להמלצות (Testimonials) --- */
+.testimonial-card {
+    border-top: 4px solid var(--accent-color); /* פס כתום למעלה */
+}
+
+/* --- רספונסיביות (התאמה למובייל) --- */
+@media (max-width: 768px) {
+    /* כותרת */
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .main-nav ul {
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    /* Hero - הופך לטור אחד */
+    .hero-section {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .hero-split-container {
+        flex-direction: column; /* הטקסט למעלה, תמונה למטה */
+    }
+
+    .hero-content-side {
+        padding: 40px 20px;
+        text-align: center;
+    }
+    
+    .hero-image-side {
+        height: 300px; /* גובה קבוע לתמונה במובייל */
+        flex: none;
+        clip-path: none; /* מבטל אלכסון במובייל */
+    }
+
+    .hero-text-wrapper h1 {
+        font-size: 32px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    /* גרידים - הופכים לטור אחד */
+    .cards-grid, .testimonials-grid, .footer-columns {
+        grid-template-columns: 1fr;
+    }
+}
