@@ -1,4 +1,3 @@
 # MathBoosh-website
 Welcome to Mathboost - The platform connects Israeli high-school students with top proffessional math tuitor to help the ace their math Bagrut.
 <br>
-https://michalevinnn.github.io/MathBoosh-website/
