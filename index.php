@@ -1,48 +1,4 @@
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MathBoost - לומדים מתמטיקה בקלות</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-
-    <header class="site-header">
-        <div class="container header-wrapper">
-            <div class="site-logo">
-                <a href="index.html">MathBoost</a>
-            </div>
-            
-            <nav class="navigation-menu">
-                <ul>
-                    <li class="dropdown">
-                        <a href="subjects.html" class="dropbtn">נושאי לימוד <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-content">
-                            <a href="#">אלגברה</a>
-                            <a href="#">גאומטריה</a>
-                            <a href="#">טריגונומטריה</a>
-                            <a href="#">פונקציות</a>
-                            <a href="#">הסתברות וסטטיסטיקה</a>
-                            <a href="#">התפלגות נורמלית</a>
-                            <a href="#">חדו״א</a>
-                        </div>
-                    </li>
-                    <li><a href="practice.html">תרגול ובחנים</a></li>
-                    <li><a href="#about">אודות</a></li>
-                    <li><a href="#contact">צור קשר</a></li>
-                </ul>
-            </nav>
-
-            <div class="header-actions">
-                <a href="book-lesson.html" class="btn btn-primary">הזמן שיעור פרטי</a>
-            </div>
-        </div>
-    </header>
+    <?php include 'includes/header.php'; ?>
 
     <main>
         <section class="hero-section">
@@ -57,8 +13,8 @@
                         <p>נתקעת בשיעורי הבית? אנחנו כאן כדי לעזור. סרטוני הסבר קצרים, תרגול ממוקד ומורים פרטיים זמינים.</p>
                         
                         <div class="hero-cta-group">
-                            <a href="book-lesson.html" class="btn btn-primary">קבע שיעור פרטי</a>
-                            <a href="subjects.html" class="btn btn-outline">התחל ללמוד</a>
+                            <a href="book-lesson.php" class="btn btn-primary">קבע שיעור פרטי</a>
+                            <a href="lessons.php" class="btn btn-outline">התחל ללמוד</a>
                         </div>
                     </div>
                 </div>
@@ -143,32 +99,7 @@
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h4>MathBoost</h4>
-                    <p>© 2025 כל הזכויות שמורות</p>
-                </div>
-                <div class="footer-column">
-                    <h4>ניווט מהיר</h4>
-                    <ul>
-                        <li><a href="#">דף הבית</a></li>
-                        <li><a href="#">נושאי לימוד</a></li>
-                        <li><a href="#">קביעת שיעור</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>צור קשר</h4>
-                    <ul>
-                        <li><a href="mailto:info@mathboost.co.il">info@mathboost.co.il</a></li>
-                        <li><a href="#">פייסבוק</a></li>
-                        <li><a href="#">אינסטגרם</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+     <?php include 'includes/footer.php'; ?>
 
 </body>
 </html>
